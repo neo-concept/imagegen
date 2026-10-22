@@ -10,7 +10,17 @@
   "homepage": "https://github.com/neo-concept/imagegen",
   "repository": "https://github.com/neo-concept/imagegen",
   "license": "MIT",
-  "keywords": ["image", "image-generation", "gemini", "nano-banana", "openai", "gpt-image", "openrouter", "mcp"],
+  "keywords": [
+    "image",
+    "image-generation",
+    "gemini",
+    "nano-banana",
+    "openai",
+    "gpt-image",
+    "openrouter",
+    "mcp"
+  ],
+  "icon": "./.claude-plugin/icon.png",
   "userConfig": {
     "gemini_api_key": {
       "type": "string",
@@ -37,7 +47,12 @@
       "type": "string",
       "title": "Default provider",
       "description": "auto picks the first provider with a key, in the order gemini, openai, openrouter.",
-      "options": ["auto", "gemini", "openai", "openrouter"],
+      "options": [
+        "auto",
+        "gemini",
+        "openai",
+        "openrouter"
+      ],
       "default": "auto"
     },
     "output_dir": {
