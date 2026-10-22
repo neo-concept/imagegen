@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3 — 2026-10-22
+
+- Display name "Neo ImageGen", distinct from other image plugins in the directory.
+- README no longer names environment credential variables.
+
 ## 0.1.2 — 2026-10-22
 
 - Default provider option is free text (directory requirement for options referenced from the MCP config).

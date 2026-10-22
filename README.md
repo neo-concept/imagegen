@@ -1,4 +1,4 @@
-# imagegen — image generation for Claude Code
+# Neo ImageGen — image generation for Claude Code
 
 Generate and edit images right from Claude Code with **your own API key**. No middleman server, no credits to buy: requests go straight from your machine to the provider you choose.
 
@@ -21,7 +21,7 @@ In Claude Code:
 
 Claude Code asks for the plugin options when you enable it. Fill in at least one API key; the others can stay empty. Keys are stored in your system's secure credential store, not in `settings.json`. Change them later in `/plugin` → imagegen → Configure options.
 
-The plugin reads keys only from these options. It does not pick up `GEMINI_API_KEY`, `OPENAI_API_KEY` or similar variables already set in your shell. From the command line: `claude plugin install imagegen@neo-concept --config openrouter_api_key=...`.
+The plugin reads keys only from these options, never from variables already set in your shell. From the command line: `claude plugin install imagegen@neo-concept --config openrouter_api_key=...`.
 
 Requires Node.js 20 or newer on `PATH`. There are no npm dependencies to install.
 
