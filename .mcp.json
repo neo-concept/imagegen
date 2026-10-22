@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "imagegen": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server/index.mjs"],
+      "env": {
+        "IMAGEGEN_GEMINI_API_KEY": "${user_config.gemini_api_key}",
+        "IMAGEGEN_OPENAI_API_KEY": "${user_config.openai_api_key}",
+        "IMAGEGEN_OPENROUTER_API_KEY": "${user_config.openrouter_api_key}",
+        "IMAGEGEN_DEFAULT_PROVIDER": "${user_config.default_provider}",
+        "IMAGEGEN_OUTPUT_DIR": "${user_config.output_dir}",
+        "IMAGEGEN_PROJECT_DIR": "${CLAUDE_PROJECT_DIR}",
+        "NODE_USE_ENV_PROXY": "1"
+      }
+    }
+  }
+}

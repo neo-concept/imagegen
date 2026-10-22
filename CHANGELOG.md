@@ -1,0 +1,9 @@
+# Changelog
+
+## 0.1.0 — 2026-10-22
+
+- First release.
+- `generate_image`, `edit_image` and `list_providers` MCP tools.
+- Providers: Google Gemini (Nano Banana), OpenAI gpt-image, OpenRouter.
+- API keys as sensitive plugin options or environment variables.
+- Images saved to the project, with aspect ratio, resolution tier and count options.

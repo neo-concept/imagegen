@@ -1,0 +1,50 @@
+{
+  "name": "imagegen",
+  "displayName": "Image Generation",
+  "version": "0.1.0",
+  "description": "Generate and edit images from Claude Code with your own API key: Google Gemini (Nano Banana), OpenAI gpt-image, or any image model on OpenRouter. Images are saved straight into your project.",
+  "author": {
+    "name": "Neo Concept",
+    "url": "https://github.com/neo-concept"
+  },
+  "homepage": "https://github.com/neo-concept/imagegen",
+  "repository": "https://github.com/neo-concept/imagegen",
+  "license": "MIT",
+  "keywords": ["image", "image-generation", "gemini", "nano-banana", "openai", "gpt-image", "openrouter", "mcp"],
+  "userConfig": {
+    "gemini_api_key": {
+      "type": "string",
+      "title": "Gemini API key",
+      "description": "Google AI Studio key (aistudio.google.com/apikey). Image models need billing enabled on the key's project. Leave empty if unused.",
+      "sensitive": true,
+      "default": ""
+    },
+    "openai_api_key": {
+      "type": "string",
+      "title": "OpenAI API key",
+      "description": "OpenAI platform key for gpt-image models. Leave empty if unused.",
+      "sensitive": true,
+      "default": ""
+    },
+    "openrouter_api_key": {
+      "type": "string",
+      "title": "OpenRouter API key",
+      "description": "One key for many image models (Gemini, GPT image and others) via openrouter.ai. Leave empty if unused.",
+      "sensitive": true,
+      "default": ""
+    },
+    "default_provider": {
+      "type": "string",
+      "title": "Default provider",
+      "description": "auto picks the first provider with a key, in the order gemini, openai, openrouter.",
+      "options": ["auto", "gemini", "openai", "openrouter"],
+      "default": "auto"
+    },
+    "output_dir": {
+      "type": "string",
+      "title": "Output directory",
+      "description": "Where images are saved when no output_path is given, relative to the project root.",
+      "default": "generated-images"
+    }
+  }
+}

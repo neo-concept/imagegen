@@ -1,0 +1,17 @@
+{
+  "name": "neo-concept",
+  "description": "Claude Code plugins by Neo Concept",
+  "owner": {
+    "name": "Neo Concept",
+    "url": "https://github.com/neo-concept"
+  },
+  "plugins": [
+    {
+      "name": "imagegen",
+      "source": "./",
+      "description": "Generate and edit images with Gemini (Nano Banana), OpenAI gpt-image or OpenRouter using your own API key.",
+      "category": "media",
+      "tags": ["image", "image-generation", "gemini", "openai", "openrouter"]
+    }
+  ]
+}
