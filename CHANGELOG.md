@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4 — 2026-10-22
+
+- Documentation, support and privacy links for the directory listing.
+
 ## 0.1.3 — 2026-10-22
 
 - Display name "Neo ImageGen", distinct from other image plugins in the directory.
