@@ -1,6 +1,6 @@
 {
   "name": "@neo-concept/imagegen",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP server and Claude Code plugin for image generation with Gemini, OpenAI and OpenRouter",
   "type": "module",
   "private": true,

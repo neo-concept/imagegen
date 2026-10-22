@@ -227,7 +227,7 @@ function providerForModel(model) {
 export function resolveProvider({ provider, model }) {
   let name = provider && provider !== "auto" ? provider : providerForModel(model);
   if (!name) {
-    const preferred = envValue("IMAGEGEN_DEFAULT_PROVIDER");
+    const preferred = envValue("IMAGEGEN_DEFAULT_PROVIDER")?.toLowerCase();
     if (preferred && preferred !== "auto") name = preferred;
   }
   if (!name) {
@@ -247,7 +247,7 @@ export function resolveProvider({ provider, model }) {
 }
 
 export function providerStatus() {
-  const preferred = envValue("IMAGEGEN_DEFAULT_PROVIDER") ?? "auto";
+  const preferred = envValue("IMAGEGEN_DEFAULT_PROVIDER")?.toLowerCase() ?? "auto";
   return Object.values(PROVIDERS).map((p) => ({
     provider: p.name,
     configured: Boolean(p.apiKey()),

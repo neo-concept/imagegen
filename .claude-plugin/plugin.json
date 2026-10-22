@@ -1,7 +1,7 @@
 {
   "name": "imagegen",
   "displayName": "Image Generation",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate and edit images from Claude Code with your own API key: Google Gemini (Nano Banana), OpenAI gpt-image, or any image model on OpenRouter. Images are saved straight into your project.",
   "author": {
     "name": "Neo Concept",
@@ -46,13 +46,7 @@
     "default_provider": {
       "type": "string",
       "title": "Default provider",
-      "description": "auto picks the first provider with a key, in the order gemini, openai, openrouter.",
-      "options": [
-        "auto",
-        "gemini",
-        "openai",
-        "openrouter"
-      ],
+      "description": "auto picks the first provider with a key, in the order gemini, openai, openrouter. Or set one of: gemini, openai, openrouter.",
       "default": "auto"
     },
     "output_dir": {

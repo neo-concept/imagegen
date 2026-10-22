@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 — 2026-10-22
+
+- Default provider option is free text (directory requirement for options referenced from the MCP config).
+
 ## 0.1.1 — 2026-10-22
 
 - API keys are read only from the plugin options, not from `GEMINI_API_KEY`, `OPENAI_API_KEY` or `OPENROUTER_API_KEY` in the environment.
