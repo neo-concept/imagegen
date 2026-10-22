@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — 2026-10-22
+
+- API keys are read only from the plugin options, not from `GEMINI_API_KEY`, `OPENAI_API_KEY` or `OPENROUTER_API_KEY` in the environment.
+- Plugin icon.
+- README lists every network endpoint the plugin calls.
+
 ## 0.1.0 — 2026-10-22
 
 - First release.

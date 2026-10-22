@@ -41,8 +41,8 @@ export function openaiSize(aspectRatio, imageSize) {
 const gemini = {
   name: "gemini",
   defaultModel: "gemini-3.1-flash-image",
-  apiKey: () => envValue("IMAGEGEN_GEMINI_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY"),
-  keyHint: "set the Gemini API key in the plugin options or GEMINI_API_KEY (https://aistudio.google.com/apikey)",
+  apiKey: () => envValue("IMAGEGEN_GEMINI_API_KEY"),
+  keyHint: "set the Gemini API key in the plugin options (https://aistudio.google.com/apikey)",
 
   async generate({ prompt, model, aspectRatio, imageSize, images, apiKey }) {
     const base = envValue("IMAGEGEN_GEMINI_BASE_URL") ?? "https://generativelanguage.googleapis.com/v1beta";
@@ -106,8 +106,8 @@ const gemini = {
 const openai = {
   name: "openai",
   defaultModel: "gpt-image-2",
-  apiKey: () => envValue("IMAGEGEN_OPENAI_API_KEY", "OPENAI_API_KEY"),
-  keyHint: "set the OpenAI API key in the plugin options or OPENAI_API_KEY (https://platform.openai.com/api-keys)",
+  apiKey: () => envValue("IMAGEGEN_OPENAI_API_KEY"),
+  keyHint: "set the OpenAI API key in the plugin options (https://platform.openai.com/api-keys)",
 
   async generate({ prompt, model, aspectRatio, imageSize, images, apiKey, count, quality, background, outputFormat }) {
     const base = envValue("IMAGEGEN_OPENAI_BASE_URL") ?? "https://api.openai.com/v1";
@@ -154,8 +154,8 @@ const openai = {
 const openrouter = {
   name: "openrouter",
   defaultModel: "google/gemini-3.1-flash-image",
-  apiKey: () => envValue("IMAGEGEN_OPENROUTER_API_KEY", "OPENROUTER_API_KEY"),
-  keyHint: "set the OpenRouter API key in the plugin options or OPENROUTER_API_KEY (https://openrouter.ai/keys)",
+  apiKey: () => envValue("IMAGEGEN_OPENROUTER_API_KEY"),
+  keyHint: "set the OpenRouter API key in the plugin options (https://openrouter.ai/keys)",
 
   async generate({ prompt, model, aspectRatio, imageSize, images, apiKey }) {
     const base = envValue("IMAGEGEN_OPENROUTER_BASE_URL") ?? "https://openrouter.ai/api/v1";
@@ -234,8 +234,8 @@ export function resolveProvider({ provider, model }) {
     name = AUTO_ORDER.find((n) => PROVIDERS[n].apiKey());
     if (!name) {
       throw new UserError(
-        "No image provider is configured. Add at least one API key in /plugin → imagegen → Configure options, " +
-          "or export GEMINI_API_KEY, OPENAI_API_KEY or OPENROUTER_API_KEY before starting Claude Code.",
+        "No image provider is configured. Add at least one API key with /plugin configure imagegen@neo-concept " +
+          "(or /plugin → imagegen → Configure options).",
       );
     }
   }

@@ -13,7 +13,7 @@ Tools from the `imagegen` MCP server:
 
 ## Workflow
 
-1. If you are unsure whether anything is configured, call `list_providers` first. If no provider has a key, tell the user to open `/plugin`, select imagegen and configure its options, or to export `GEMINI_API_KEY`, `OPENAI_API_KEY` or `OPENROUTER_API_KEY`.
+1. If you are unsure whether anything is configured, call `list_providers` first. If no provider has a key, tell the user to run `/plugin configure imagegen@neo-concept` (or open `/plugin`, select imagegen and configure its options) and add at least one API key.
 2. Write a concrete prompt: subject, style or medium, composition and camera, lighting, color palette, and any exact text that must appear (in quotes). Mention what to avoid only when it matters.
 3. Save where the project needs the file: pass `output_path`, e.g. `public/images/hero.webp` or `assets/icons/`. Without it, files land in `generated-images/`.
 4. Pick `aspect_ratio` to match the use: `16:9` banners and heroes, `1:1` icons and avatars, `9:16` mobile and stories, `4:3` or `3:2` illustrations.

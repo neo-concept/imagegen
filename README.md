@@ -21,7 +21,7 @@ In Claude Code:
 
 Claude Code asks for the plugin options when you enable it. Fill in at least one API key; the others can stay empty. Keys are stored in your system's secure credential store, not in `settings.json`. Change them later in `/plugin` → imagegen → Configure options.
 
-Instead of plugin options you can export `GEMINI_API_KEY` (or `GOOGLE_API_KEY`), `OPENAI_API_KEY` or `OPENROUTER_API_KEY` before starting Claude Code.
+The plugin reads keys only from these options. It does not pick up `GEMINI_API_KEY`, `OPENAI_API_KEY` or similar variables already set in your shell. From the command line: `claude plugin install imagegen@neo-concept --config openrouter_api_key=...`.
 
 Requires Node.js 20 or newer on `PATH`. There are no npm dependencies to install.
 
@@ -64,9 +64,17 @@ Advanced environment variables: `IMAGEGEN_GEMINI_MODEL`, `IMAGEGEN_OPENAI_MODEL`
 - **Regional restrictions.** Gemini and OpenAI block some countries. The server honours `HTTPS_PROXY` (on Node.js 22.21+ / 24+). OpenRouter is usually the easiest option there.
 - Previews are off by default: tools return file paths, and Claude reads the file when it needs to look, which keeps base64 out of your context.
 
-## Privacy
+## Privacy and network access
 
-Prompts and any images you pass are sent only to the provider you selected. The plugin has no server of its own and collects nothing.
+The plugin runs a local MCP server (`node ${CLAUDE_PLUGIN_ROOT}/server/index.mjs`) and makes HTTPS requests only to the provider you select, with the key you configured for it:
+
+| Provider | Endpoint | Sent |
+|---|---|---|
+| Gemini | `https://generativelanguage.googleapis.com/v1beta/models/<model>:generateContent` | prompt, reference/source images |
+| OpenAI | `https://api.openai.com/v1/images/generations`, `/v1/images/edits` | prompt, source images |
+| OpenRouter | `https://openrouter.ai/api/v1/chat/completions` | prompt, reference/source images |
+
+It reads only the image files you name, writes generated images into your project, and stores nothing else. There is no server of its own, no telemetry and no analytics. What each provider does with requests is governed by its own terms and privacy policy.
 
 ## Development
 
